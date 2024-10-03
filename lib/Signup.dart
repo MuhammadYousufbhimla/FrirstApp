@@ -47,7 +47,7 @@ class _SignupState extends State<Signup> {
               child: Column(
                 children: [
                 Container(
-                  height: 100,
+                  height: 90,
                   width: 90,
                   margin: EdgeInsets.only(top: 40,bottom: 10),
                   decoration: BoxDecoration(
