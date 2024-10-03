@@ -48,7 +48,7 @@ class _SignupState extends State<Signup> {
                 children: [
                 Container(
                   height: 100,
-                  width: 100,
+                  width: 90,
                   margin: EdgeInsets.only(top: 40,bottom: 10),
                   decoration: BoxDecoration(
                    //color: Colors.green,
