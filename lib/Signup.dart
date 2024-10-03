@@ -11,7 +11,7 @@ class Signup extends StatefulWidget {
  Widget  drawerlist (String title,String subtitle,String trailing){
    return ListTile(
          leading:Icon(Icons.home),
-          title: Text(title,style: TextStyle(fontSize: 10),),
+          title: Text(title,style: TextStyle(fontSize: 12),),
          subtitle:Text(subtitle),
          trailing:Text(trailing),
          iconColor: Colors.green,
