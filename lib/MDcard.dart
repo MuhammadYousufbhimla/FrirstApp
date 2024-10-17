@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:myfirsapp/Constants.dart';
 import 'package:myfirsapp/Naigationbar.dart';
 import 'package:myfirsapp/Signin.dart';
 import 'package:myfirsapp/Signup.dart';
@@ -33,6 +34,7 @@ var Additionaltitle = [
   "BP",
   "Glucose Test",
   "Report Analysis",
+  "Report Analysis"
 ];
 var Additionalicon = [
   Icons.medical_services,
@@ -47,6 +49,7 @@ class _MdcardState extends State<Mdcard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 161, 208, 230),
       appBar: AppBar(title: Text("Card"),
       
       ),
@@ -56,22 +59,25 @@ class _MdcardState extends State<Mdcard> {
         // color: Color(0xFF2196F3),
         child: ListView(
           children: [
-
             Container(
                 child: CarouselSlider(
-              options: CarouselOptions(),
+              options: CarouselOptions(autoPlay: true),
               items: imgList
                   .map((item) => Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                        
+                          ),
                         child: Center(
                             child: Image.network(item,
                                 fit: BoxFit.cover,
                                 width: MediaQuery.of(context).size.width)),
                       ))
                   .toList(),
-            )),
+            )
+            ),
 
             Container(
-              
               child: TextField(
                 autofocus: false,
                 style: TextStyle(fontSize: 15.0, color: Color(0xFFbdc6cf)),
@@ -92,8 +98,8 @@ class _MdcardState extends State<Mdcard> {
                   ),
                 ),
               ),
-              decoration: new BoxDecoration(
-                  borderRadius: new BorderRadius.all(new Radius.circular(30.0)),
+              decoration: BoxDecoration(
+                  borderRadius:  BorderRadius.all(new Radius.circular(30.0)),
                   color: Colors.white),
               width: 250,
               height: 50,
@@ -116,7 +122,9 @@ class _MdcardState extends State<Mdcard> {
                     crossAxisCount: 2
                     ),
                 itemBuilder: (context, index) {
-                  return InkWell(
+                  return GestureDetector(
+                    // focusColor: Colors.green,
+                    // borderRadius: BorderRadius.circular(10),
                     onTap: () {
                       Navigator.push(
                         context,
@@ -129,6 +137,8 @@ class _MdcardState extends State<Mdcard> {
                             "${Hometitle[index]}", Colors.white)),
                   );
                 }),
+
+                
             Container(
               margin: EdgeInsets.only(
                   top: MediaQuery.of(context).size.height * 0.05,
@@ -143,7 +153,7 @@ class _MdcardState extends State<Mdcard> {
             GridView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
-                itemCount: Additionaltitle.length,
+                itemCount:Additionaltitle.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     mainAxisExtent: MediaQuery.of(context).size.width * 0.3,
                     crossAxisCount: 4),
@@ -162,7 +172,7 @@ class _MdcardState extends State<Mdcard> {
                             context,
                             Additionalicon[index],
                             Additionaltitle[index],
-                            Colors.white)),
+                            Colors.yellow)),
                   );
                 }),
           ],
@@ -172,10 +182,11 @@ class _MdcardState extends State<Mdcard> {
       )
     
       ),
-    //bottomNavigationBar: Bottom()  
+   // bottomNavigationBar: Bottom()  
     );
   }
 }
+
 Widget containericon(context, iconname, icontext, backgroundcolor) {
   return Container(
     padding: EdgeInsets.only(
@@ -236,7 +247,7 @@ Widget containericonsmall(context, iconname, icontext, backgroundcolor) {
           Radius.circular(MediaQuery.of(context).size.width * 0.03)),
       boxShadow: [
         BoxShadow(
-          color: Colors.grey.withOpacity(0.2),
+          color: const Color.fromARGB(255, 0, 30, 129).withOpacity(0.2),
           spreadRadius: 1,
           blurRadius: 2,
           offset: Offset(0, 3), // changes position of shadow
@@ -260,7 +271,7 @@ Widget containericonsmall(context, iconname, icontext, backgroundcolor) {
           child: Text(
             icontext,
             style: TextStyle(
-                //color: Constants.mainColor,
+              color: Constants.yellowAccent,
                 fontSize: MediaQuery.of(context).size.width * 0.03),
             textAlign: TextAlign.center,
           ),

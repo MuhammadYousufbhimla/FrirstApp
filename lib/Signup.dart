@@ -46,6 +46,7 @@ class _SignupState extends State<Signup> {
               width: double.infinity,
               child: Column(
                 children: [
+                  
                 Container(
                   height: 90,
                   width: 90,
@@ -127,6 +128,14 @@ class _SignupState extends State<Signup> {
                 //scrollDirection: Axis.horizontal  ,
                // padding: EdgeInsets.all(200),
                 children: [
+                  InkWell(
+                    onTap: (){
+                      Navigator.push
+                      (context, MaterialPageRoute(builder: (context)=>Signin(name: "test",)));
+                    },
+                  
+                    
+                    child: Center(child: Text("Click me"))),
                   Center(child: Text("Welcome")),
                  Container(
                     //color: Colors.green,
