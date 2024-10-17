@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfirsapp/MDcard.dart';
 import 'package:myfirsapp/Naigationbar.dart';
 import 'package:myfirsapp/Signin.dart';
 import 'package:myfirsapp/Signup.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:Card()
+      home:Mdcard()
     );
   }
 }
