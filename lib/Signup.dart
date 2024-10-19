@@ -32,10 +32,10 @@ class _SignupState extends State<Signup> {
       bool _isHidden = true;
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Signup Form"),
-        backgroundColor: Colors.blue,
-        centerTitle: true,
+        appBar: AppBar(
+          title: Text("Signup Form"),
+          backgroundColor: Colors.blue,
+          centerTitle: true,
       ),
 
       drawer: Drawer(
@@ -160,21 +160,21 @@ class _SignupState extends State<Signup> {
                    ),
                   ),
                  ),
-                   Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10,vertical: 20),
-                  child: TextFormField(
-                    controller: _lastnamecontroller,
-                  //validator: (valuess) => EmailValidator.validate(value) ? null : "Please enter a valid email",
-                    textAlign: TextAlign.center ,
-                    autofocus: true,
-                    cursorColor: Colors.black,
-                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    label: Text("Enter Email Address:"),
-                     suffix: Text("@gmail.com"),
-                   ),
+                    Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10,vertical: 20),
+                    child: TextFormField(
+                      controller: _lastnamecontroller,
+                    //validator: (valuess) => EmailValidator.validate(value) ? null : "Please enter a valid email",
+                      textAlign: TextAlign.center ,
+                      autofocus: true,
+                      cursorColor: Colors.black,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      label: Text("Enter Email Address:"),
+                      suffix: Text("@gmail.com"),
+                    ),
+                    ),
                   ),
-                 ),
                 
                   Container(
                 alignment: Alignment.center,
