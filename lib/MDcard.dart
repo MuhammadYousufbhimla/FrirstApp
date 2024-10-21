@@ -34,7 +34,7 @@ var Additionaltitle = [
   "BP",
   "Glucose Test",
   "Report Analysis",
-  "Report Analysis"
+  
 ];
 var Additionalicon = [
   Icons.medical_services,
@@ -156,7 +156,7 @@ class _MdcardState extends State<Mdcard> {
                 itemCount:Additionaltitle.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     mainAxisExtent: MediaQuery.of(context).size.width * 0.3,
-                    crossAxisCount: 4),
+                    crossAxisCount: 2),
                 itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {
@@ -201,10 +201,10 @@ Widget containericon(context, iconname, icontext, backgroundcolor) {
           Radius.circular(MediaQuery.of(context).size.width * 0.03)),
       boxShadow: [
         BoxShadow(
-          color: Colors.grey.withOpacity(0.2),
+          color: Colors.orange.withOpacity(0.2),
           spreadRadius: 1,
           blurRadius: 2,
-          offset: Offset(0, 3), // changes position of shadow
+          offset: Offset(8, 15), // changes position of shadow
         ),
       ],
     ),
