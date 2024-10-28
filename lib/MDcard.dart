@@ -172,7 +172,7 @@ class _MdcardState extends State<Mdcard> {
                             context,
                             Additionalicon[index],
                             Additionaltitle[index],
-                            Colors.yellow)),
+                            const Color.fromARGB(255, 103, 255, 237))),
                   );
                 }),
           ],
@@ -201,7 +201,7 @@ Widget containericon(context, iconname, icontext, backgroundcolor) {
           Radius.circular(MediaQuery.of(context).size.width * 0.03)),
       boxShadow: [
         BoxShadow(
-          color: Colors.orange.withOpacity(0.2),
+          color: const Color.fromARGB(255, 0, 225, 255).withOpacity(0.2),
           spreadRadius: 1,
           blurRadius: 2,
           offset: Offset(8, 15), // changes position of shadow
@@ -271,7 +271,7 @@ Widget containericonsmall(context, iconname, icontext, backgroundcolor) {
           child: Text(
             icontext,
             style: TextStyle(
-              color: Constants.yellowAccent,
+             /// color: Constants.yellowAccent,
                 fontSize: MediaQuery.of(context).size.width * 0.03),
             textAlign: TextAlign.center,
           ),

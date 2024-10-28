@@ -228,10 +228,14 @@ class _SignupState extends State<Signup> {
                     label: Text("Password :"),
                     
                    suffixIcon:  IconButton(
-                  icon:Icon(_isHidden ? Icons.visibility 
+                  icon:Icon(_isHidden ? Icons.visibility_off_sharp 
                   : Icons.ac_unit_rounded,),
-                   onPressed: (){},
-                   color: const Color.fromARGB(255, 64, 75, 236),
+                   onPressed: (){
+                    setState(() {
+                      _isHidden != _isHidden;
+                    });
+                   },
+                   color: const Color.fromARGB(255, 109, 116, 209),
                    ),
                ),
                obscureText: _isHidden,
