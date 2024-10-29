@@ -5,6 +5,7 @@ import 'package:myfirsapp/Naigationbar.dart';
 import 'package:myfirsapp/Signin.dart';
 import 'package:myfirsapp/Signup.dart';
 
+
 class Mdcard extends StatefulWidget {
   const Mdcard({super.key});
 
@@ -113,32 +114,39 @@ class _MdcardState extends State<Mdcard> {
             ),
 
 
-            GridView.builder(
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: 4,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    mainAxisExtent: MediaQuery.of(context).size.width * 0.4,
-                    crossAxisCount: 2
-                    ),
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    // focusColor: Colors.green,
-                    // borderRadius: BorderRadius.circular(10),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Homenav[index]),
-                      );
-                    },
-                    child: Container(
-                        margin: EdgeInsets.all(2),
-                        child: containericon(context, Homeicon[index],
-                            "${Hometitle[index]}", Colors.white)),
-                  );
-                }),
-
+            Container(
+              child: GridView.builder(
                 
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: 4,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      mainAxisExtent: MediaQuery.of(context).size.width * 0.4,
+                      crossAxisCount: 2
+                      ),
+                  itemBuilder: (context, index) {
+
+                    return GestureDetector(
+
+                      // focusColor: Colors.green,
+                      // borderRadius: BorderRadius.circular(10),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Homenav[index]),
+                       );
+                      },
+                      child: Container(
+                          margin: EdgeInsets.all(2),
+                          child: 
+                          containericon(context, Homeicon[index],
+                              "${Hometitle[index]}", Colors.white)
+                              ),
+                    );
+                  }),
+            ),
+
+                /// TExtform
             Container(
               margin: EdgeInsets.only(
                   top: MediaQuery.of(context).size.height * 0.05,
@@ -147,10 +155,13 @@ class _MdcardState extends State<Mdcard> {
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.green
+                      color: const Color.fromARGB(255, 37, 216, 43)
                       )),
             ),
-            GridView.builder(
+            /// Grid
+              
+              Container(
+                child:    GridView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount:Additionaltitle.length,
@@ -172,9 +183,11 @@ class _MdcardState extends State<Mdcard> {
                             context,
                             Additionalicon[index],
                             Additionaltitle[index],
-                            const Color.fromARGB(255, 103, 255, 237))),
+                            const Color.fromARGB(255, 103, 255, 237))
+                            ),
                   );
-                }),
+                })
+              ),
           ],
         ),
           
@@ -187,7 +200,7 @@ class _MdcardState extends State<Mdcard> {
   }
 }
 
-Widget containericon(context, iconname, icontext, backgroundcolor) {
+Widget containericon(context, iconname, title, backgroundcolor) {
   return Container(
     padding: EdgeInsets.only(
         top: MediaQuery.of(context).size.width * 0.08,
@@ -222,7 +235,7 @@ Widget containericon(context, iconname, icontext, backgroundcolor) {
             top: MediaQuery.of(context).size.width * 0.04,
           ),
           child: Text(
-            icontext,
+            title,
             style: TextStyle(
                 //color: Constants.mainColor,
                 fontSize: MediaQuery.of(context).size.width * 0.04),
@@ -233,7 +246,7 @@ Widget containericon(context, iconname, icontext, backgroundcolor) {
   );
 }
 
-Widget containericonsmall(context, iconname, icontext, backgroundcolor) {
+Widget containericonsmall(context, iconname, title, backgroundcolor) {
   return Container(
     padding: EdgeInsets.only(
         top: MediaQuery.of(context).size.width * 0.04,
@@ -247,7 +260,7 @@ Widget containericonsmall(context, iconname, icontext, backgroundcolor) {
           Radius.circular(MediaQuery.of(context).size.width * 0.03)),
       boxShadow: [
         BoxShadow(
-          color: const Color.fromARGB(255, 0, 30, 129).withOpacity(0.2),
+          color: const Color.fromARGB(255, 129, 0, 0).withOpacity(0.2),
           spreadRadius: 1,
           blurRadius: 2,
           offset: Offset(0, 3), // changes position of shadow
@@ -269,7 +282,7 @@ Widget containericonsmall(context, iconname, icontext, backgroundcolor) {
             top: MediaQuery.of(context).size.width * 0.04,
           ),
           child: Text(
-            icontext,
+            title,
             style: TextStyle(
              /// color: Constants.yellowAccent,
                 fontSize: MediaQuery.of(context).size.width * 0.03),
