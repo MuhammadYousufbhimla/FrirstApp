@@ -4,6 +4,7 @@ import 'package:myfirsapp/Naigationbar.dart';
 import 'package:myfirsapp/Signin.dart';
 import 'package:myfirsapp/Signup.dart';
 import 'package:myfirsapp/bottom.dart';
+import 'package:myfirsapp/curved.dart';
 
 
 void main() {

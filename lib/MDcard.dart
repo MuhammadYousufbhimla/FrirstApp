@@ -6,6 +6,7 @@ import 'package:myfirsapp/Signin.dart';
 import 'package:myfirsapp/Signup.dart';
 
 
+
 class Mdcard extends StatefulWidget {
   const Mdcard({super.key});
 
@@ -113,6 +114,27 @@ class _MdcardState extends State<Mdcard> {
                   EdgeInsets.all(MediaQuery.of(context).size.width * 0.005),
             ),
 
+               GridView.builder(
+                shrinkWrap: true,
+                  itemCount: 4,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      mainAxisExtent: MediaQuery.of(context).size.width * 0.4,
+                      crossAxisCount: 2
+                      ),
+                       itemBuilder: (context, index) {
+                    return GestureDetector( onTap: () 
+                    {
+                        Navigator.push
+                        (
+                          context,
+                          MaterialPageRoute(builder: (context) => Homenav[index]),
+                       );
+                      },
+                      child: newconatainer(context, Additionaltitle[index],Icon(Icons.access_alarm,size: 30,)),
+                      );
+                       }
+                       
+               ),
 
             Container(
               child: GridView.builder(
@@ -137,12 +159,27 @@ class _MdcardState extends State<Mdcard> {
                        );
                       },
                       child: Container(
+                        decoration: BoxDecoration(
+
+                          borderRadius: BorderRadius.circular(23),
+                          color: Colors.amber
+                        ),
                           margin: EdgeInsets.all(2),
-                          child: 
-                          containericon(context, Homeicon[index],
-                              "${Hometitle[index]}", Colors.white)
-                              ),
+                          child: Container(
+                            child: Column(
+                              children: [
+                                Icon(Icons.media_bluetooth_off),
+                                Text("Report")
+                                
+                              ],
+                            ),
+                          )
+                      )
                     );
+                    //       containericon(context, Homeicon[index],
+                    //           "${Hometitle[index]}", Colors.white)
+                    //           ),
+                    // );
                   }),
             ),
 
@@ -197,6 +234,23 @@ class _MdcardState extends State<Mdcard> {
       ),
    // bottomNavigationBar: Bottom()  
     );
+  }
+
+  Container newconatainer(context,String title, Icon) {
+    return Container(
+                      margin: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(23),
+                        color: Colors.green
+                      ),
+                      child: Column(
+                        children: [ 
+                          Icon,
+                          Text('$title'),
+                        ],
+                      )
+                      
+                    );
   }
 }
 
