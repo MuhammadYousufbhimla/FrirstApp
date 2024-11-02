@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:myfirsapp/Signin.dart';
 import 'package:myfirsapp/Signup.dart';
 
 class MyWidget extends StatefulWidget {
@@ -10,46 +9,100 @@ class MyWidget extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<MyWidget> {
-   var pages = [Home(),AboutPage(),AboutPage()];
-  int _selectedItem=0;
-  @override
-  //   void _onItemTapped(int index) {
-  //   setState(() {
-  //     _selectedItem = index;
-  //   });
-  // }
+                // 0         // 1      //  2
+var pagesnew = [Homepage(), AboutUS(), Setting()];
+  int _selectedItem = 0;
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title  : Text('Bottom Navigation'),
       ),
+
       body: Center(
-        child:pages[_selectedItem],
-       
+       // child: Text("PAge 1"),
+       child: pagesnew[_selectedItem],//0 
       ),
-     bottomNavigationBar: BottomNavigationBar(
-    mouseCursor: MouseCursor.defer,
-    items: <BottomNavigationBarItem>[
-      BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home",),
-      BottomNavigationBarItem(icon: Icon(Icons.info),label: "About"),
-      BottomNavigationBarItem(icon: Icon(Icons.cleaning_services),label: "Services"),
+
+      bottomNavigationBar: BottomNavigationBar(
+
+        // selectedItemColor: Colors.red,
+        unselectedItemColor: Colors.yellow,
+        backgroundColor: Colors.lightGreen,
+        items: <BottomNavigationBarItem>
+        [
+          BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.add_box_outlined),label: "About US"),
+          BottomNavigationBarItem(icon: Icon(Icons.settings),label: "Setting"),
+          
+
+      ],
+
+      currentIndex: _selectedItem, // 0 
+      onTap: (value) {
+        setState(() {
+          print(value);
+          _selectedItem = value; 
+        });
+      },
+      ),
+    
+    //  bottomNavigationBar: BottomNavigationBar(
+    // mouseCursor: MouseCursor.defer,
+    // items: <BottomNavigationBarItem>[
+    //   BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home",),
+    //   BottomNavigationBarItem(icon: Icon(Icons.info),label: "About"),
+    //   BottomNavigationBarItem(icon: Icon(Icons.cleaning_services),label: "Services"),
       
       
-    ],
+    // ],
 
     
-        currentIndex: _selectedItem,
-        selectedItemColor: const Color.fromARGB(255, 0, 140, 255),
-        onTap: (SetValue){
-        setState(() {
-          _selectedItem=SetValue  ;
-        });
-        print(pages);
-        },
+    //     currentIndex: _selectedItem,
+    //     selectedItemColor: const Color.fromARGB(255, 0, 140, 255),
+    //     onTap: (SetValue){
+    //     setState(() {
+    //       _selectedItem=SetValue  ;
+    //     });
+    //     print(pages);
+    //     },
       
-      ),
+    //   ),
        // backgroundColor: Colors.amber,
     );
   
     }
   }
+
+  class Homepage extends StatelessWidget {
+  const Homepage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(child: Text("Home Page"),),
+    );
+  }
+}
+
+class AboutUS extends StatelessWidget {
+  const AboutUS({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(child: Text("AboutUS Page"),),
+    );
+  }
+}
+
+class Setting extends StatelessWidget {
+  const Setting({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(child: Text("Setting Page"),),
+    );
+  }
+}
