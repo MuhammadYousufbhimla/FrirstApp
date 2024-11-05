@@ -15,6 +15,8 @@ class Mdcard extends StatefulWidget {
   State<Mdcard> createState() => _MdcardState();
 }
 
+var items =["item1","item2","item3"];
+String  dropdownvalue= "item1";
 final List<String> imgList = [
   'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
   'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
@@ -77,6 +79,27 @@ class _MdcardState extends State<Mdcard> {
                       ))
                   .toList(),
             )
+            ),
+
+            Container(
+              child: Column(
+                children: [
+                       DropdownButton(
+                        dropdownColor: Colors.green,
+                        items: items.map((String items){
+                          return DropdownMenuItem(
+                            value: items,
+                            child: Text(items),
+                          );
+                        }).toList()
+                       
+                        ,onChanged: (String ? value){
+                          setState(() {
+                            dropdownvalue = value!;
+                          });
+                        })
+                ],
+              ),
             ),
 
             Container(

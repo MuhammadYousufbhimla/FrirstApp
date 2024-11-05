@@ -16,9 +16,17 @@ var pagesnew = [Homepage(), AboutUS(), Setting()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(title  : Text('Bottom Navigation'),
+      bottom: TabBar(tabs: 
+      [
+        
+        Text("Bottom"),
+        Text("Upper"),
+        Text("Upper"),
+        Text("Upper")
+      ]),
       ),
-
       body: Center(
        // child: Text("PAge 1"),
        child: pagesnew[_selectedItem],//0 
