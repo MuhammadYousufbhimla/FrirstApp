@@ -47,6 +47,7 @@ var Additionalicon = [
   Icons.report_gmailerrorred_outlined,
 ];
 
+ bool? value1 = false;
 var Additionalnav = [Signup(), Signup(), Signin(name: "Test",), Signup()];
 
 class _MdcardState extends State<Mdcard> {
@@ -59,28 +60,76 @@ class _MdcardState extends State<Mdcard> {
       ),
        body: Center(
           child: Container(
+
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(25)),
         width: MediaQuery.of(context).size.width * 0.95,
         // color: Color(0xFF2196F3),
         child: ListView(
           children: [
-            Container(
+            Container
+            (
+            //  margin: EdgeInsets.all(25),
                 child: CarouselSlider(
               options: CarouselOptions(autoPlay: true),
               items: imgList
                   .map((item) => Container(
+                    margin: EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                        
+                            borderRadius: BorderRadius.circular(40),
+                            image: DecorationImage(image: NetworkImage(item)
+                            )
                           ),
-                        child: Center(
-                            child: Image.network(item,
-                                fit: BoxFit.cover,
-                                width: MediaQuery.of(context).size.width)),
-                      ))
+                  )
+                  )
+                      //   child: Center(
+                      //       child: Image.network(item,
+                      //           fit: BoxFit.cover,
+                      //           width: MediaQuery.of(context).size.width)),
+                      // ))
                   .toList(),
             )
             ),
 
+            Container(
+              child:  Column(
+                children: [
+                  Text(
+                    'Checkbox',
+                    style: TextStyle(
+                        color: Colors.greenAccent[400],
+                        fontSize: 30),
+                  ),
+                   SizedBox(height: 10),
+                  Row(
+                    children: <Widget>[
+                       SizedBox(width: 10),
+                       Text(
+                         'Gender:',
+                        style: TextStyle(fontSize: 15.0),
+                      ),
+                       SizedBox(width: 20),
+                      Checkbox(
+                        checkColor: Colors.amber,                      
+                        hoverColor: Colors.yellow,
+                        value: value1,
+                        onChanged: (bool? newValue111)
+                         {
+                          setState(()
+                           {
+                            print(newValue111);
+                            value1 = newValue111;
+                          });
+                        },
+                      ),
+                    ],
+            
+            
+            )
+            ]
+              )
+          
+            
+            ),
             Container(
               child: Column(
                 children: [
