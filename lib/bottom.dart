@@ -10,7 +10,7 @@ class MyWidget extends StatefulWidget {
 
 class _MyWidgetState extends State<MyWidget> {
                 // 0         // 1      //  2
-var pagesnew = [Homepage(), AboutUS(), Setting()];
+var pagesnew = [Homepage(), AboutUS(), Setting(),AboutUS()];
   int _selectedItem = 0;
 
   @override
@@ -18,14 +18,14 @@ var pagesnew = [Homepage(), AboutUS(), Setting()];
     return Scaffold(
       
       appBar: AppBar(title  : Text('Bottom Navigation'),
-      bottom: TabBar(tabs: 
-      [
+     // bottom: TabBar(tabs: 
+      // [
         
-        Text("Bottom"),
-        Text("Upper"),
-        Text("Upper"),
-        Text("Upper")
-      ]),
+      //   Text("Bottom"),
+      //   Text("Upper"),
+      //   Text("Upper"),
+      //   Text("Upper")
+      // ]),
       ),
       body: Center(
        // child: Text("PAge 1"),
@@ -35,13 +35,15 @@ var pagesnew = [Homepage(), AboutUS(), Setting()];
       bottomNavigationBar: BottomNavigationBar(
 
         // selectedItemColor: Colors.red,
-        unselectedItemColor: Colors.yellow,
-        backgroundColor: Colors.lightGreen,
+       // unselectedItemColor: const Color.fromARGB(255, 59, 88, 255),
+      backgroundColor: Colors.lightGreen,
         items: <BottomNavigationBarItem>
         [
+        
           BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.add_box_outlined),label: "About US"),
           BottomNavigationBarItem(icon: Icon(Icons.settings),label: "Setting"),
+           BottomNavigationBarItem(icon: Icon(Icons.settings),label: "LogOut"),
           
 
       ],
