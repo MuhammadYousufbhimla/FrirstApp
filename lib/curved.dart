@@ -26,7 +26,8 @@ class _CurvedState extends State<Curved> {
           index: 0,
           items: 
           [
-            Icon(Icons.add, size: 30,color: Colors.green,shadows: [BoxShadow(color: Colors.black)],),
+            Icon(Icons.add, size: 30,color: Colors.green,shadows: [BoxShadow(color:
+             Colors.black)],),
             Icon(Icons.list, size: 30),
             Icon(Icons.compare_arrows, size: 30),
             Icon(Icons.call_split, size: 30),
