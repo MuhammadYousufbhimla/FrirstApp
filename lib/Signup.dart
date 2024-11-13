@@ -39,12 +39,13 @@ class _SignupState extends State<Signup> {
       ),
 
       drawer: Drawer(
-        child: Column(
+        child: ListView(
           children: [
             Container(
               color: const Color.fromARGB(255, 132, 3, 244),
               width: double.infinity,
               child: Column(
+               // verticalDirection: VerticalDirection.down,
                 children: [
                   
                 Container(
@@ -72,6 +73,9 @@ class _SignupState extends State<Signup> {
            drawerlist("setting ","abc","test"),
            drawerlist("service","abc","test"),
            drawerlist("Home","abc","test"),
+           drawerlist("Home","abc","test"),
+           drawerlist("Home","abc","test"),
+           drawerlist("Home","abc","test"), 
 
             //ListTile(
             // ListTile(
@@ -243,7 +247,33 @@ class _SignupState extends State<Signup> {
                   ),
                  
                  
-              
+                Container(
+                  margin: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(10)
+                  ),
+                  child:Column(
+                    children: [
+                      ListTile(
+                        hoverColor: Colors.teal,
+                        iconColor: Colors.yellow,
+                        leading: Icon(Icons.whatshot_rounded),
+                        title: Text("Muhammad Yousuf"),
+                        subtitle: Column(
+                         // mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("test"),
+                            Text("test"),
+                            
+                          ],
+                        ),
+                        trailing: Text("07:30PM"),
+                      )
+                    ],
+                  )
+                ),
            
                 
                  Row(

@@ -5,7 +5,9 @@ import 'package:myfirsapp/Signin.dart';
 import 'package:myfirsapp/Signup.dart';
 
 class Curved extends StatefulWidget {
-  const Curved({super.key});
+   Curved({super.key, required this.num });
+
+  String num="";
 
   @override
   State<Curved> createState() => _CurvedState();
@@ -14,7 +16,7 @@ class Curved extends StatefulWidget {
 
 GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
               //0        //1             //2      //3        // 4
-var pages = [Signup(),Signin(name: ''),Signup(),AboutPage(),Signup()];
+var pages = [Signup(),Signin(name: 'xyz'),Signup(),AboutPage(),Signup()];
  
 
 class _CurvedState extends State<Curved> {
@@ -57,7 +59,7 @@ class _CurvedState extends State<Curved> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>
               [
-                Text("0",style: TextStyle(fontSize: 140)),
+                Text(widget.num,style: TextStyle(fontSize: 140)),
                // Text(_page.toString(), style: TextStyle(fontSize: 160)),
                 ElevatedButton(
                   child: Text('Go To Page of index 1'),
