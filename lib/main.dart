@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:myfirsapp/MDcard.dart';
 import 'package:myfirsapp/Naigationbar.dart';
@@ -5,6 +7,7 @@ import 'package:myfirsapp/Signin.dart';
 import 'package:myfirsapp/Signup.dart';
 import 'package:myfirsapp/bottom.dart';
 import 'package:myfirsapp/curved.dart';
+import 'package:myfirsapp/jsondata.dart';
 
 
 void main() {
@@ -24,7 +27,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Signup(),
+      home: JsondataSample(),
       //home:Curved(num: "0 ",)
     );
   }
