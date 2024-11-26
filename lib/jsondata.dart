@@ -1,11 +1,16 @@
-import 'package:flutter/material.dart';
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' as rootBundle;
 import 'package:myfirsapp/class.dart';
 
+
+
 Future<List<DataItem>> fetchData() async {
+  
   final jsonResponse = await rootBundle.rootBundle.loadString('assets/sample.json');
+  print(jsonResponse);
   final List<dynamic> data = json.decode(jsonResponse);
+  print(data);
 
   return data.map((jsonItem) => DataItem.fromJson(jsonItem)).toList();
 }

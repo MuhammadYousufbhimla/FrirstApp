@@ -1,6 +1,8 @@
 class DataItem {
+
   final String name;
   final int age;
+  
 
   DataItem({required this.name, required this.age});
 
