@@ -10,6 +10,7 @@ class DataItem {
     return DataItem(
       name: json['name'],
       age: json['age'],
+      
     );
   }
 }

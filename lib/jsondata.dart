@@ -1,14 +1,15 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' as rootBundle;
+import 'package:flutter/services.dart' as  rootBundle;
+
 import 'package:myfirsapp/class.dart';
 
 
+Future<List<DataItem>> fetchData() async {  
 
-Future<List<DataItem>> fetchData() async {
-  
   final jsonResponse = await rootBundle.rootBundle.loadString('assets/sample.json');
   print(jsonResponse);
+
   final List<dynamic> data = json.decode(jsonResponse);
   print(data);
 
@@ -47,8 +48,10 @@ class MyHomePage extends StatelessWidget {
       body: FutureBuilder<List<DataItem>>(
         future: fetchData(), // Ye method data fetch karega
         builder: (context, snapshot) {
+          print(snapshot);
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return Center(child: CircularProgressIndicator(color: Colors.yellow
+            ,));
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
@@ -64,7 +67,9 @@ class MyHomePage extends StatelessWidget {
                   leading: Icon(Icons.import_contacts),
                   //leading: Image(image: NetworkImage(imgList[index]),fit: BoxFit.cover,),
                   title: Text(item.name),
+                  trailing: Text("XYZ"),
                   subtitle: Text('Age: ${item.age}'),
+                
                 );
               },
             );
